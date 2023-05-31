@@ -12,12 +12,17 @@ class RestaurantsController < ApplicationController
   end
 
   def create
-    @restaurant = Restaurant.new(params[:restaurant])
-
+    @restaurant = Restaurant.new(restaurants_params)
     if @restaurant.save
-      redirect_to restaurants_path
+      redirect_to restaurant_path(@restaurant)
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
+  end
+
+  private
+
+  def restaurants_params
+    params.require(:restaurant).permit(:name, :address, :phone_number, :category)
   end
 end
