@@ -9,7 +9,8 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
-  <div class="container-fluid">
+  <div >
+    <%= link_to 'Restaurants', restaurants_path, { class: 'container-fluid' }%>
     <h1> Restaurants </h1>
   </div>
   <body>

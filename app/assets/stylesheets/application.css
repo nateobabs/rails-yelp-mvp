@@ -16,6 +16,7 @@
 .container-fluid {
   background-color: beige;
   border-bottom: 3px solid rgba(138, 76, 76, 0.43);
+  display: block;
 }
 
 .container-restaurant {
